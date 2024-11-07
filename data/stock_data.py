@@ -14,11 +14,14 @@ class StockData:
         if self.data is not None:
             self.data['Return'] = self.data['Adj Close'].pct_change()
             self.calculate_indicators()
-            self.data.fillna(method='ffill', inplace=True)  # Forward fill NaN values
-            self.data.dropna(inplace=True)  # Drop remaining NaN values
+            
+            self.data.ffill(inplace=True) 
+            self.data.dropna(inplace=True) 
+            
             return self.data
         else:
             raise ValueError("Data not fetched. Call fetch_data() first.")
+
 
     def calculate_indicators(self):
         self.calculate_sma()
@@ -62,7 +65,7 @@ class StockData:
             self.data['BB_Middle'] = self.data['Close'].rolling(window=window).mean()
             self.data['BB_Upper'] = self.data['BB_Middle'] + num_std * self.data['Close'].rolling(window=window).std()
             self.data['BB_Lower'] = self.data['BB_Middle'] - num_std * self.data['Close'].rolling(window=window).std()
-            # Debugging print to verify columns
+            # Debugging
             print(self.data[['BB_Middle', 'BB_Upper', 'BB_Lower']].head())
         else:
             raise ValueError("Data not fetched. Call fetch_data() first.")
