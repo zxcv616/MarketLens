@@ -62,6 +62,8 @@ class StockData:
             self.data['BB_Middle'] = self.data['Close'].rolling(window=window).mean()
             self.data['BB_Upper'] = self.data['BB_Middle'] + num_std * self.data['Close'].rolling(window=window).std()
             self.data['BB_Lower'] = self.data['BB_Middle'] - num_std * self.data['Close'].rolling(window=window).std()
+            # Debugging print to verify columns
+            print(self.data[['BB_Middle', 'BB_Upper', 'BB_Lower']].head())
         else:
             raise ValueError("Data not fetched. Call fetch_data() first.")
 
