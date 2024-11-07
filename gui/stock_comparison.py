@@ -1,6 +1,6 @@
 import tkinter as tk
 from tkinter import ttk
-from tkinter import messagebox  # Add this import
+from tkinter import messagebox 
 from data.stock_data import StockData
 import pandas as pd
 
