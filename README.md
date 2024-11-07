@@ -1,19 +1,19 @@
 # MarketLens
 
-Current functions:
+## Current functions:
 - Recieves input ticker
 - Reponds with buy/sell/hold analysis
 - Provides quantifyable reasoning
 - Customtkinter for GUI
 
-WIP:
+## WIP:
 - Backtesting
 - Prediction data over graph
 - Integration of more data structures
 - User sentiment analysis with ML
 
 
-\\ Logic and Info \\
+## Logic and Info
 
 Data Fetching and Preprocessing:
 - Historical stock data is gathered from yfinance
