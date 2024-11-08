@@ -166,7 +166,7 @@ class StockApp:
             stock_data = StockData(ticker)
             stock_data.fetch_data()
             data = stock_data.preprocess_data()
-            stock_data.calculate_indicators()
+            stock_data.calculate_indicators() # why do you call this twice? its already called in preprocess data
 
             prediction_model = PredictionModel(data)
             final_recommendation, reasons = prediction_model.combined_strategy()
