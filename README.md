@@ -1,5 +1,7 @@
 # MarketLens
 
+Quantitative analysis application developed entirely by myself with the help of a few friends (thank you forest for helping me with dataframes). Truly my favorite project of mine, and has genuinely made me >5figs in personal earnings. Use at your own risk, not financial advice.
+
 ## Current functions:
 - Recieves input ticker
 - Reponds with buy/sell/hold analysis
